@@ -33,10 +33,15 @@ Grey dark 3: #999;
 
   --border-grey-light-2: .1rem solid var(--color-grey-light-2);
 
-  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
   --shadow-light: 0 2rem 5rem rgba(0, 0, 0, .06);
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
 }
 
+$bp-xl: 75em;     // 1200/16 
+$bp-lg: 68.75em;  // 1100/16
+$bp-md: 56.25em;  // 900/16
+$bp-sm: 37.5em;   // 600/16
+$bp-xs: 31.25em;  // 500/16
 
 
 * {
@@ -52,7 +57,11 @@ Grey dark 3: #999;
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 62.5%; // 1rem = 10px, 10px 7 16px = 62.5
+
+  @media only screen  and (max-width: $bp-lg){
+    font-size: 50%;
+  }
 }
 
 body {
